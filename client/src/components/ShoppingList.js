@@ -21,7 +21,12 @@ class ShoppingList extends Component {
 
 
     render() {
-        const { items } = this.props.item;
+	    
+	     if (this.props.item === undefined) {
+      return <div>Loading....</div>;
+    } else {
+	            const { items } = this.props.item;
+
         return(
             <Container>
 
@@ -47,6 +52,7 @@ class ShoppingList extends Component {
             </Container>
         );
     }
+ }
 }
 
 ShoppingList.propTypes = {
